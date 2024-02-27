@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import App from "./App";
+import MainPage from "./Pages/MainPage";
+import RegisterPage from "./Pages/RegisterPage";
 
 const router = createBrowserRouter ([
     {
@@ -11,7 +12,11 @@ const router = createBrowserRouter ([
         children: [
             {
                 path: "/",
-                element: <App />,
+                element: <MainPage />,
+            },
+            {
+                path: "/register",
+                element: <RegisterPage />,
             },
         ]
     }

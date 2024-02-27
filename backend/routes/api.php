@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
     //All secure URL's
 
 });
+
+Route::post('/register', [RegisterController::class, 'register']);
