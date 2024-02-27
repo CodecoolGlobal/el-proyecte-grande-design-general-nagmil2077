@@ -1,4 +1,5 @@
 import {Outlet, Link} from "react-router-dom";
+import Logout from "../Components/Logout";
 
 const MainPage = () => (
     <div className="MainPage">
@@ -12,7 +13,7 @@ const MainPage = () => (
                     </div>
                     <br/>
                     <div>
-
+                        <Logout />
                     </div>
                 </div>
             ) : (
