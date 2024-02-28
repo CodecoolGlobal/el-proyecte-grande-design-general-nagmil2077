@@ -31,7 +31,7 @@ const Register = () => {
             });
 
             if (response.ok) {
-                navigate('/')
+                navigate('/');
             } else {
                 console.error('Registration failed');
             }
