@@ -1,21 +1,20 @@
+import {Link} from "react-router-dom";
 
 
-function SideBar(){
+function SideBar() {
 
     return (
         <div className="sidebar">
             <h2>Fictional Company</h2>
-            <ul>
-                <li>
-                    <h5>My Schedule</h5>
-                </li>
-                <li>
-                    <h5>Schedule maker</h5>
-                </li>
-                <li>
-                    <h5>Logout</h5>
-                </li>
-            </ul>
+            <div>
+                <Link to="/profile">My profile</Link>
+            </div>
+            <div>
+                <Link to="/scheduler">Schedule maker</Link>
+            </div>
+            <div>
+                <Link to='/logout'>Logout</Link>
+            </div>
         </div>
     )
 }

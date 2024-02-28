@@ -18,7 +18,6 @@ function Scheduler() {
         <div className="container">
             <SideBar/>
             <div>
-
                 <table>
                     <thead>
                     <tr>
@@ -42,7 +41,6 @@ function Scheduler() {
                     </tbody>
                 </table>
             </div>
-            );
         </div>
 
 

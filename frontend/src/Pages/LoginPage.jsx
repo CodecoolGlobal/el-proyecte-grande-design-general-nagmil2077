@@ -32,7 +32,7 @@ const Login = () => {
             if (response.ok) {
                 const data = await response.json();
                 localStorage.setItem('token', data.token);
-                navigate('/');
+                navigate('/profile');
             } else {
                 console.error('Authentication failed');
                 alert('Wrong e-mail or password! Please try again!');

@@ -7,7 +7,8 @@ import MainPage from "./Pages/MainPage";
 import RegisterPage from "./Pages/RegisterPage";
 import LoginPage from "./Pages/LoginPage";
 import Scheduler from "./Pages/Scheduler";
-import SideBar from "./Components/SideBar";
+import Logout from "./Pages/Logout";
+import Profile from "./Pages/Profile";
 
 
 
@@ -29,8 +30,16 @@ const router = createBrowserRouter ([
                 element: <LoginPage />,
             },
             {
+                path: "/logout",
+                element: <Logout />,
+            },
+            {
                 path: "/scheduler",
                 element: <Scheduler />,
+            },
+            {
+                path: "/profile",
+                element: <Profile />,
             },
         ]
     }
