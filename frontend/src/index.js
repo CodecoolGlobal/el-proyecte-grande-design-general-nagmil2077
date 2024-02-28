@@ -6,10 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import MainPage from "./Pages/MainPage";
 import RegisterPage from "./Pages/RegisterPage";
 import LoginPage from "./Pages/LoginPage";
+import Scheduler from "./Pages/Scheduler";
+import SideBar from "./Components/SideBar";
+
+
 
 const router = createBrowserRouter ([
     {
         path: "/",
+
         children: [
             {
                 path: "/",
@@ -23,11 +28,15 @@ const router = createBrowserRouter ([
                 path: "/login",
                 element: <LoginPage />,
             },
+            {
+                path: "/scheduler",
+                element: <Scheduler />,
+            },
         ]
     }
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
         <RouterProvider router={router} />

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
+import SideBar from "../Components";
 
 const Login = () => {
 
@@ -42,22 +43,27 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Email:
-                    <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-                </label>
-                <br />
-                <label>
-                    Password:
-                    <input type="password" name="password" value={formData.password} onChange={handleChange} required />
-                </label>
-                <br />
-                <button type="submit">Sign In</button>
-            </form>
-        </div>
+        <>
+            <div className="container">
+                <SideBar/>
+                <h2>Login</h2>
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        Email:
+                        <input type="email" name="email" value={formData.email} onChange={handleChange} required/>
+                    </label>
+                    <br/>
+                    <label>
+                        Password:
+                        <input type="password" name="password" value={formData.password} onChange={handleChange}
+                               required/>
+                    </label>
+                    <br/>
+                    <button type="submit">Sign In</button>
+                </form>
+            </div>
+
+        </>
     );
 };
 

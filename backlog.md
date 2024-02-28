@@ -1,0 +1,4 @@
+- LOGIN page should log out existing user (drop token)
+- every page checks existing token. If backend comes ith error message (no permission), display message and redirect to LOGIN page
+- REMEMBER ME tickbox: if checked, backend sends a token, if not checked, backend only sends a cookie with 1h lifetime
+- 
