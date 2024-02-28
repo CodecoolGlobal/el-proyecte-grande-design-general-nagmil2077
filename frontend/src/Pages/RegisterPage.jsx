@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import {useNavigate} from "react-router-dom";
 
 const Register = () => {
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -29,7 +31,7 @@ const Register = () => {
             });
 
             if (response.ok) {
-                window.location.href = '/';
+                navigate('/')
             } else {
                 console.error('Registration failed');
             }

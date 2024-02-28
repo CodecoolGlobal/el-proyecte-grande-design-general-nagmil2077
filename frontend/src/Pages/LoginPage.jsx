@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
+import {useNavigate} from "react-router-dom";
 
 const Login = () => {
+
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -28,7 +31,7 @@ const Login = () => {
             if (response.ok) {
                 const data = await response.json();
                 localStorage.setItem('token', data.token);
-                window.location.href = '/';
+                navigate('/')
             } else {
                 console.error('Authentication failed');
                 alert('Wrong e-mail or password! Please try again!');
