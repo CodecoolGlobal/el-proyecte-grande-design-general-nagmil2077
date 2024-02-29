@@ -1,18 +1,28 @@
 import SideBar from "../Components/SideBar";
+import {useEffect, useState} from "react";
 
 function Scheduler() {
-    // Define the hours
+    const [machines, setMachines] = useState([])
+    const [loading, setLoading] = useState(true)
+
     const hours = Array.from({ length: 24 }, (_, i) => `${i < 10 ? '0' : ''}${i}:00`);
 
-    // Define the machines
-    const machines = ['Machine 1', 'Machine 2', 'Machine 3'];
-
-    // Get today's date
     const today = new Date().toLocaleDateString();
 
     function handleClick(hour, machine)  {
-        console.log(`Clicked on cell: Hour ${hour}, Machine ${machine}`);
+        console.log(`Clicked on cell: Hour ${hour}, Machine ${machines[machine].name}`);
     }
+
+    async function fetchMachines() {
+        const response = await fetch('/api/machinenames')
+        const data = await response.json()
+        setMachines(data);
+        setLoading(false);
+    }
+
+    useEffect(() => {
+        fetchMachines()
+    }, []);
 
     return (
         <div className="container">
@@ -22,9 +32,13 @@ function Scheduler() {
                     <thead>
                     <tr>
                         <th>{today}</th>
-                        {machines.map((machine, index) => (
-                            <th key={index}>{machine}</th>
-                        ))}
+                        {loading ? (
+                            <th>Loading...</th>
+                        ) : (
+                            machines.map((machine, index) => (
+                                <th key={index}>{machine.name}</th>
+                            ))
+                        )}
                     </tr>
                     </thead>
                     <tbody>

@@ -2,8 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Models\Machine;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Machine;
 use Illuminate\Database\Seeder;
 
 class TableSeeder extends Seeder

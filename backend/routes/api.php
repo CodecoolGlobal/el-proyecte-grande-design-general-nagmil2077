@@ -28,3 +28,4 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/login', [LoginController::class, 'login']);
+Route::get('/machinenames', [\App\Http\Controllers\MachineController::class, 'getNames']);
