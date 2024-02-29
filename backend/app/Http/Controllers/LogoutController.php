@@ -9,7 +9,10 @@ class LogoutController extends Controller
 {
     public function logout(): \Illuminate\Http\JsonResponse
     {
-        Auth::logout();
+        Auth::guard('web')->logout();
+//        $user = Auth::user();
+//        $user->tokens()->delete();
+
         return response()->json(['message' => 'Successfully logged out']);
     }
 }
