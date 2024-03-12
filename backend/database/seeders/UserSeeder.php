@@ -27,11 +27,13 @@ class UserSeeder extends Seeder
             "Isabella Anderson"
         ];
         foreach ($employeeNames as $person){
-            User::create([
+            $user = User::create([
                 'name' =>$person,
                 'email' => strtolower(str_replace(' ', '.', $person)) . "@fakemail.com",
                 'password' => Hash::make('password'),
             ]);
+
+            $user->assignRole('user');
         }
     }
 }
