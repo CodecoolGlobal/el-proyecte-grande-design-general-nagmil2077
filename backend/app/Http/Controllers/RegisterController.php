@@ -21,7 +21,7 @@ class RegisterController extends Controller
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
             'created_at' => now(),
-        ]);
+        ])->assignRole('user');
 
         return response()->json(['message' => 'Registration successful', 'user' => $user]);
     }
