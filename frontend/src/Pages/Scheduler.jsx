@@ -1,5 +1,6 @@
 import SideBar from "../Components/SideBar";
 import {useEffect, useState} from "react";
+import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@mui/material";
 
 function Scheduler() {
     const [machines, setMachines] = useState([]);
@@ -71,39 +72,44 @@ function Scheduler() {
     return (
         <div className="container">
             <SideBar />
-            <div>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>{today}</th>
-                        {loading ? (
-                            <th>Loading...</th>
-                        ) : (
-                            machines.map((machine, index) => <th key={index}>{machine.name}</th>)
-                        )}
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {hours.map((hour, hourIndex) => (
-                        <tr key={hourIndex}>
-                            <td>{hour}</td>
-                            {machines.map((machine, machineIndex) => (
-                                <td key={machineIndex} onClick={() => handleClick(hour, machineIndex)}>
-                                    <select onChange={(e) => handleUserSelection(machineIndex, hour, e)}>
-                                        <option value=""></option>
-                                        {availableUsers.get(`${machines[machineIndex].id}-${hour}`)?.map(user => (
-                                            <option key={user.id} value={user.id}>{user.name}</option>
-                                        ))}
-                                    </select>
-                                </td>
-                            ))}
-                        </tr>
-                    ))}
-                    </tbody>
-                </table>
-            </div>
+            <TableContainer component={Paper}>
+                <Table aria-label="simple table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>{today}</TableCell>
+                            {loading ? (
+                                <TableCell>Loading...</TableCell>
+                            ) : (
+                                machines.map((machine, index) => (
+                                    <TableCell key={index}>{machine.name}</TableCell>
+                                ))
+                            )}
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {hours.map((hour, hourIndex) => (
+                            <TableRow key={hourIndex}>
+                                <TableCell component="th" scope="row">
+                                    {hour}
+                                </TableCell>
+                                {machines.map((machine, machineIndex) => (
+                                    <TableCell key={machineIndex} onClick={() => handleClick(hour, machineIndex)}>
+                                        <select onChange={(e) => handleUserSelection(machineIndex, hour, e)} defaultValue="">
+                                            <option value="" disabled>Select User</option>
+                                            {availableUsers.get(`${machines[machineIndex].id}-${hour}`)?.map(user => (
+                                                <option key={user.id} value={user.id}>{user.name}</option>
+                                            ))}
+                                        </select>
+                                    </TableCell>
+                                ))}
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
         </div>
     );
+
 }
 
 export default Scheduler
