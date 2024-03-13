@@ -1,0 +1,8 @@
+title Scheduling App
+View-->RegistartionController:
+LoginForm-->AuthController:
+AuthController-->User:token
+RegistrationForm-->RegistartionController:request
+MachineController-->User:
+ScheduleController-->User:
+ScheduleController->MachineController:
