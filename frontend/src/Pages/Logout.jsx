@@ -1,4 +1,5 @@
 import {useNavigate} from "react-router-dom";
+import {Box, Button} from "@mui/material";
 
 const Logout = () => {
     const navigate = useNavigate();
@@ -25,9 +26,11 @@ const Logout = () => {
     }
 
     return (
-        <div>
-            <button onClick={handleLogout}>Logout</button>
-        </div>
+        <Box display="flex" justifyContent="center" alignItems="center" p={3}>
+            <Button variant="contained" onClick={handleLogout}>
+                Logout
+            </Button>
+        </Box>
     );
 };
 

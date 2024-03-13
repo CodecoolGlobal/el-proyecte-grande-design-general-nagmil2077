@@ -13,6 +13,16 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
+
+    public function userMachineSkills()
+    {
+        return $this->hasMany(UserMachineSkill::class);
+    }
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class, 'user');
+    }
+
     /**
      * The attributes that are mass assignable.
      *
