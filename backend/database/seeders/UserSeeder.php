@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
                 'name' =>$person,
                 'email' => strtolower(str_replace(' ', '.', $person)) . "@fakemail.com",
                 'password' => Hash::make('password'),
-            ]);
+            ])->assignRole('user');
         }
     }
 }

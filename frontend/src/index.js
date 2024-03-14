@@ -38,7 +38,7 @@ const router = createBrowserRouter ([
                 element: <Scheduler />,
             },
             {
-                path: "/profile",
+                path: "/profile/:id",
                 element: <Profile />,
             },
         ]
