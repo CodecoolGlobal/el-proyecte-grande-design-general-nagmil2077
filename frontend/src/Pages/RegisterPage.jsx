@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import SideBar from "../Components";
+import {Box, Button, Container, TextField, Typography} from "@mui/material";
 
 const Register = () => {
     const navigate = useNavigate()
@@ -42,32 +43,58 @@ const Register = () => {
     };
 
     return (
-        <>
-            <div className="container">
-                <SideBar/>
-                <h2>Registration</h2>
-                <form onSubmit={handleSubmit}>
-                    <label>
-                        Username:
-                        <input type="text" name="name" value={formData.name} onChange={handleChange} required/>
-                    </label>
-                    <br/>
-                    <label>
-                        Email:
-                        <input type="email" name="email" value={formData.email} onChange={handleChange} required/>
-                    </label>
-                    <br/>
-                    <label>
-                        Password:
-                        <input type="password" name="password" value={formData.password} onChange={handleChange}
-                               required/>
-                    </label>
-                    <br/>
-                    <button type="submit">Register</button>
-                </form>
-            </div>
-
-        </>
+        <Container>
+            <SideBar/>
+            <Typography variant="h4" component="h2" sx={{mt: 3, mb: 2}}>
+                Registration
+            </Typography>
+            <Box
+                component="form"
+                sx={{
+                    '& .MuiTextField-root': {m: 1, width: '25ch'},
+                }}
+                noValidate
+                autoComplete="off"
+                onSubmit={handleSubmit}
+            >
+                <div>
+                    <TextField
+                        label="Username"
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        variant="outlined"
+                    />
+                </div>
+                <div>
+                    <TextField
+                        label="Email"
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        variant="outlined"
+                    />
+                </div>
+                <div>
+                    <TextField
+                        label="Password"
+                        type="password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                        variant="outlined"
+                    />
+                </div>
+                <Button type="submit" variant="contained" sx={{mt: 3}}>
+                    Register
+                </Button>
+            </Box>
+        </Container>
     );
 };
 
