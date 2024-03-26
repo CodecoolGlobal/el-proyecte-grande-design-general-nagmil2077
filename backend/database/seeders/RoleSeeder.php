@@ -17,19 +17,19 @@ class RoleSeeder extends Seeder
         $admin = Role::create(['name' => 'admin']);
         $user = Role::create(['name' => 'user']);
 
-        $create_users_permission = Permission::create(['name' => 'create users']);
-        $manage_users_permission = Permission::create(['name' => 'manage users']);
-        $assign_schedule_permission = Permission::create(['name' => 'assign schedule']);
-        $update_profile_permission = Permission::create(['name' => 'update profile']);
+        $createUsersPermission = Permission::create(['name' => 'create users']);
+        $manageUsersPermission = Permission::create(['name' => 'manage users']);
+        $assignSchedulePermission = Permission::create(['name' => 'assign schedule']);
+        $updateProfilePermission = Permission::create(['name' => 'update profile']);
 
         $adminPermissions = [
-            $create_users_permission,
-            $manage_users_permission,
-            $assign_schedule_permission,
-            $update_profile_permission
+            $createUsersPermission,
+            $manageUsersPermission,
+            $assignSchedulePermission,
+            $updateProfilePermission
         ];
 
-        $user->givePermissionTo($update_profile_permission);
+        $user->givePermissionTo($updateProfilePermission);
         $admin->syncPermissions($adminPermissions);
     }
 }
