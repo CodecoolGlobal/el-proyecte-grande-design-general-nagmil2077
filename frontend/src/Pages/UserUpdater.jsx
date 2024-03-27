@@ -51,14 +51,16 @@ const UserUpdater = () => {
     }
 
     return (
-        <Container>
-            <SideBar />
-            <UserForm
-                user={user}
-                onSave={handleUpdateUser}
-                onCancel={() => navigate(`/profile/${id}`)}
-            />
-        </Container>
+        <div className="container">
+            <SideBar/>
+            {user &&
+                <UserForm
+                    user={user}
+                    onSave={handleUpdateUser}
+                    onCancel={() => navigate(`/profile/${id}`)}
+                />
+            }
+        </div>
     )
 }
 

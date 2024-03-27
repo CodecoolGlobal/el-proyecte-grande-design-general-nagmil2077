@@ -25,7 +25,7 @@ const UserForm = ({ user, onSave, onCancel }) => {
     return (
         <div>
             <Typography variant="h4" component="h2" sx={{mt: 3, mb: 2}}>
-                Update
+                Update Profile
             </Typography>
             <Box
                 component="form"
@@ -41,7 +41,7 @@ const UserForm = ({ user, onSave, onCancel }) => {
                         label="Username"
                         type="text"
                         name="name"
-                        value={formData.name}
+                        value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
                         variant="outlined"
@@ -52,7 +52,7 @@ const UserForm = ({ user, onSave, onCancel }) => {
                         label="Email"
                         type="email"
                         name="email"
-                        value={formData.email}
+                        value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                         variant="outlined"
@@ -61,7 +61,7 @@ const UserForm = ({ user, onSave, onCancel }) => {
                 <Button type="submit" variant="contained" sx={{mt: 3}}>
                     Submit
                 </Button>
-                <Button type="button" onClick={onCancel}>
+                <Button type="button" onClick={onCancel} variant="contained" sx={{mt: 3}}>
                     Cancel
                 </Button>
             </Box>
