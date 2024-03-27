@@ -35,7 +35,9 @@ function Profile() {
             <div className="container">
                 <SideBar/>
                 {user &&
-                    <div>Welcome {user.name}!</div>
+                    <div>
+                        <div>Welcome {user.name}!</div>
+                    </div>
                 }
             </div>
         </div>

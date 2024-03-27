@@ -10,7 +10,8 @@ class UserController extends Controller
 {
     public function getUserById($id)
     {
-        $user = User::query()->findOrFail($id);
+        $user = User::with('roles')->findOrFail($id);
+
         return response()->json($user);
     }
 }
