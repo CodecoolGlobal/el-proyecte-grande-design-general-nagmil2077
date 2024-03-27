@@ -14,4 +14,22 @@ class UserController extends Controller
 
         return response()->json($user);
     }
+
+    public function update(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,'.$id,
+        ]);
+
+        $user = User::findOrFail($id);
+
+        // Update:
+        $user->name = $validatedData['name'];
+        $user->email = $validatedData['email'];
+
+        $user->save();
+
+        return response()->json(['message' => 'User profile updated successfully']);
+    }
 }
