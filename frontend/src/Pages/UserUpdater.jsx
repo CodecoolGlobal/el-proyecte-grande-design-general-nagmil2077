@@ -19,7 +19,7 @@ const updateUser = (user) => {
 const UserUpdater = () => {
     const {id} = useParams();
     const [user, setUser] = useState(null);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchUser(id);

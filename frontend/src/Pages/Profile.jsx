@@ -32,32 +32,30 @@ function Profile() {
     }
 
     return (
-        <div>
-            <div className="container">
-                <SideBar/>
-                {user &&
-                    <div>
-                        <div>Welcome {user.name}!</div>
-                        <Button variant="contained" color="primary" component={Link} to={`/update/${id}`}>
-                            Update Profile
-                        </Button>
-                        {user.roles[0].name === 'admin' &&
-                            <>
-                                <div>
-                                    <Button variant="contained" color="primary">
-                                        Manage Users
-                                    </Button>
-                                </div>
-                                <div>
-                                    <Button variant="contained" color="primary">
-                                        Schedule Users
-                                    </Button>
-                                </div>
-                            </>
-                        }
-                    </div>
-                }
-            </div>
+        <div className="container">
+            <SideBar/>
+            {user &&
+                <div>
+                    <div>Welcome {user.name}!</div>
+                    <Button variant="contained" color="primary" component={Link} to={`/update/${id}`}>
+                        Update Profile
+                    </Button>
+                    {user.roles[0].name === 'admin' &&
+                        <>
+                            <div>
+                                <Button variant="contained" color="primary" component={Link} to={`/users`}>
+                                    Manage Users
+                                </Button>
+                            </div>
+                            <div>
+                                <Button variant="contained" color="primary">
+                                    Schedule Users
+                                </Button>
+                            </div>
+                        </>
+                    }
+                </div>
+            }
         </div>
     )
 }

@@ -15,7 +15,13 @@ class UserController extends Controller
         return response()->json($user);
     }
 
-    public function update(Request $request, $id)
+    public function getUsers()
+    {
+        $users = User::query()->orderBy('name')->get();
+        return response()->json($users);
+    }
+
+    public function updateUser(Request $request, $id)
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
@@ -31,5 +37,14 @@ class UserController extends Controller
         $user->save();
 
         return response()->json(['message' => 'User profile updated successfully']);
+    }
+
+    public function deleteUser($id)
+    {
+        $user = User::findOrFail($id);
+
+        $user->delete();
+
+        return response()->json(['message' => 'User deleted successfully']);
     }
 }

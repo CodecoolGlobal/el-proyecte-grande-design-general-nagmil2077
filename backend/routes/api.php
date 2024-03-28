@@ -25,8 +25,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('/users', [UserController::class, 'getUsers']);
     Route::get('/users/{id}', [UserController::class, 'getUserById']);
-    Route::patch('/users/{id}', [UserController::class, 'update']);
+    Route::patch('/users/{id}', [UserController::class, 'updateUser']);
+    Route::delete('/users/{id}', [UserController::class, 'deleteUser']);
     Route::post('/logout', [LogoutController::class, 'logout']);
     Route::get('/available-users', [ScheduleController::class, 'availableUsers']);
     Route::post('/assign-user', [ScheduleController::class, 'assignUser']);

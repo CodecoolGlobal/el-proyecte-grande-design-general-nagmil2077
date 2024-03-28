@@ -10,6 +10,7 @@ import Scheduler from "./Pages/Scheduler";
 import Logout from "./Pages/Logout";
 import Profile from "./Pages/Profile";
 import UserUpdater from "./Pages/UserUpdater";
+import UserList from "./Pages/UserList";
 
 const router = createBrowserRouter ([
     {
@@ -39,6 +40,10 @@ const router = createBrowserRouter ([
             {
                 path: "/profile/:id",
                 element: <Profile />,
+            },
+            {
+                path: "/users",
+                element: <UserList />,
             },
             {
                 path: "/update/:id",
