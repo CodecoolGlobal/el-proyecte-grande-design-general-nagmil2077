@@ -63,14 +63,43 @@ You can clone the project and install it to see it in action.
 
 * [PHP 8](https://www.php.net/downloads.php)
 * [Composer](https://getcomposer.org/)
+* [Node.js 16+](https://nodejs.org/en)
+* [MySQL](https://www.mysql.com/)
 
 ### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/CodecoolGlobal/el-proyecte-grande-design-general-nagmil2077.git
+   ```
+2. Navigate to frontend folder and install NPM packages
+   ```sh
+   npm install
+   ```
+3. Navigate to backend folder and build the backend project using Composer.
+   ```sh
+   composer install
+   ```
+   and
+   ```sh
+   composer update
+   ```
+4. Navigate to backend folder and run the backend using artisan.
+   ```sh
+   php artisan serve
+   ```
+5. Run the frontend from the frontend directory
+   ```sh
+   npm start
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact
 
 Ágnes Gurmai-Málnás - [github](https://github.com/BerryBusiness) - [linkedin](https://www.linkedin.com/in/agnes-gurmai-malnas/) - agnes.malnas@gmail.com\
-Milan Nagy - [github](https://github.com/nagmil2077) - [linkedin](https://www.linkedin.com/in/milan-nagy-a76b1416a/) - corey321@gmail.com\
+Milan Nagy - [github](https://github.com/nagmil2077) - [linkedin](https://www.linkedin.com/in/milan-nagy-a76b1416a/) - corey321@gmail.com
 
 Project Link: [https://github.com/CodecoolGlobal/el-proyecte-grande-design-general-nagmil2077](https://github.com/CodecoolGlobal/el-proyecte-grande-design-general-nagmil2077)
 
