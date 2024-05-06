@@ -1,97 +1,106 @@
-# El Proyecte Grande - Design
+<a name="readme-top"></a>
 
-## Story
+<!-- PROJECT SHIELDS -->
 
-As your Codecool Journey comes closer to its conclusion, the time has come for a final Teamwork Project, 
-that will put to test all of the programming skills you've obtained so far (and some new ones you will learn on the way)!
+[![Contributors][contributors-shield]][contributors-url]
 
-You have the freedom of choosing your teammates (assemble a team of 3-4 students) and the project's topic this time.
-Think of an app that you would find useful in your daily activities, a tool that an employee of a certain industry might crave,
-a fun game or something completely out of the box.
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/CodecoolGlobal/el-proyecte-grande-design-general-nagmil2077">
+    <img src="images/schedule.png" alt="Logo" width="50%" height="50%">
+  </a>
 
-This project is meant to last until the end of the course. While Codecool will not give you any direct tasks to fulfill regarding your project, 
-during each sprint,you and your team are expected to make incremental changes in a Scrum way, developing the project further and further,
-adding new features, technologies, etc.
+<h3 align="center">Scheduling App Teamwork Project</h3>
 
-***¡Comience El Proyecte Grande!***
+  <p align="center">
+    Study project - Teamwork
+    <br />
+    <a href="https://github.com/CodecoolGlobal/el-proyecte-grande-design-general-nagmil2077"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+  </p>
+</div>
 
-## What are you going to learn?
+<!-- ABOUT THE PROJECT -->
 
-- how to design IT products
-- how to design applications
-- how to write a Product Design Document
-- how to write an Application Design Document
-- how a Design Critique looks like
-- how to showcase product designs and ideas without actually making one
+## About The Project
 
-## Tasks
+[![Product Name Screen Shot][product-screenshot]](https://github.com/CodecoolGlobal/el-proyecte-grande-design-general-nagmil2077)
 
-1. The first phase/sprint of El Proyecte Grande focuses on designing the product, before the development work begins.
-    - All the requirements from tasks below are fulfilled during this sprint.
-    - During this phase, the team DOES NOT work on the project in a technical manner. In other words - not a single line of code is written during this sprint.
+This project is still work-in-progress and was created for educational purposes.\
+The main goal of this project was to create an application that allows a company's administrators to schedule users (workers)
+to a scheduling timetable, according to when they'll be working and which work equipment will they be using during that period.\
+The current state of the project was created under a 3-week sprint.
+It contains two projects, one for the frontend and one for the backend.\
+The frontend was created with React, the backend is handled using Laravel, and the database was established using MySQL.\
+The project currently has a Register/Login feature with user roles, a minimal user management feature,
+and a scheduling table to assign users.
 
-2. Assemble a Scrum team for your project.
-    - The team consists of 3-4 students, including yourself.
-    - The team has a Scrum Master and a Project Owner (both roles cannot be taken by the same person).
-    - The team has selected a mentor, that will serve as a dedicated Project Mentor.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-3. Create a High Level Product Design.
-    - A document is created (in Word, Google Docs or Confluence) that serves as a Product Design Document (PDD).
-    - PDD is not a technical documentation. It serves as a general concept/idea for the Product and answers some important business questions. The usage of technical language in PDD is limited, so that a non-technical person can also read and understand it.
-    - PDD describes the Product and answers the following questions:
-  - What problem does the Product solve?
-  - What is the target audience for this Product?
-  - What are the target platforms for this Product (desktop, mobile, web, etc)?
-  - What business model would fit your Product? Free to use, in app purchases, pay to use, subscription?
+### Built With
 
-4. Submit your PDD to critique by your Project Mentor
-    - Team's Product Owner arranges a Product Design Critique with the Team's Project mentor.
-    - The team presents their Product Design and describes ideas to the Project Mentor.
-    - The team answers all questions the Project Mentor asks regarding the Product.
-    - The team receives feedback from the Project Mentor and draws conclusions from it, regarding what is missing or what could be improved in their Product Design.
-    - Based on the Project Mentor's feedback, improvements to the PDD are made.
-    - Team's Product Owner arranges a follow-up meeting with the Team's Project mentor,  during which they present the improved version of the design.
+* [![Github][Github]][Github-url]
+* [![PHP][PHP]][Php-url]
+* [![Laravel][Laravel]][Laravel-url]
+* [![Javascript][Javascript]][Javascript-url]
+* [![React][React.js]][React-url]
+* [![MySQL][MySQL]][MySQL-url]
+* [![PhpStorm][PhpStorm]][PhpStorm-url]
+* [![HTML5][HTML5]][HTML5-url]
+* [![CSS][CSS]][CSS-url]
 
-5. Create a High Level Application Design.
-    - A document is created (in Word, Google Docs or Confluence) that serves as an Application Design Document (ADD).
-    - ADD is a technical documentation, containing details about Application's architecture, design patterns, utilized technologies, etc. It does not focus about the purpose of the Product or its ideas, but on the implementation with use of programming tools.
-    - ADD describes the Application and answers the following questions:
-  - What architecture and/or design patters the Application is going to use? Include some UMLs, flowcharts, sketches, etc.
-  - What is going to be the Application's main backend technology? [ASP.NET, Java Spring, Python Django, NodeJS, etc]
-  - What is going to be the Application's main frontend technology? [Razor Pages, Thymeleaf, Jinja, Angular, etc]
-  - What is going to be the Application's main database solution? [Microsoft SQL Server, Oracle MySQL, PostgreSQL, NoSQL solution, etc]
-  - Are there going to be any additional technologies used by the Application?
-  - Propose some early technical concepts for some of the major features of the Application.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-6. Submit your ADD to critique by your Project Mentor
-    - Team's Product Owner arranges an Application Design Critique with the Team's Project mentor.
-    - The team presents their Application Design and describes ideas to the Project Mentor.
-    - The team answers all questions the Project Mentor asks regarding the Application.
-    - The team receives feedback from the Project Mentor and draws conclusions from it, regarding what is missing or what could be improved in their Application Design.
-    - Based on the Project Mentor's feedback, improvements to the ADD are made.
-    - Team's Product Owner arranges a follow-up meeting with the Team's Project mentor,  during which they present the improved version of the design.
+<!-- GETTING STARTED -->
 
-7. Prepare a Product Pitch as your demo presentation for this sprint
-    - A presentation is created (in PowerPoint, Slides, etc) for the demo's purpose.
-    - The presentation doesn't directly contain the PDD and the ADD, but summarizes them in a shorter and more comprehensive form.
-    - The presentation consists of mostly images (sketches, mockups, notes) rather than plain text.
-    - The presentation is designed and presented in a way, that would convince the audience that the Product you've envisioned is going to be great, useful and innovative. The audience should be willing to use the Product once it's available.
-    - While it's mostly the Product Owner's role to present the Product to the audience, each team member has a role during the presentation.
-    - The team answers all the questions the audience has to ask about their Product.
-    - The team collects feedback from the audience about their Product and draws conclusions from it.
+## Getting Started
 
-## General requirements
+You can clone the project and install it to see it in action.
 
-None
+### Prerequisites
 
-## Hints
+* [PHP 8](https://www.php.net/downloads.php)
+* [Composer](https://getcomposer.org/)
 
+### Installation
 
+<!-- CONTACT -->
+## Contact
 
-## Background materials
+Ágnes Gurmai-Málnás - [github](https://github.com/BerryBusiness) - [linkedin](https://www.linkedin.com/in/agnes-gurmai-malnas/) - agnes.malnas@gmail.com\
+Milan Nagy - [github](https://github.com/nagmil2077) - [linkedin](https://www.linkedin.com/in/milan-nagy-a76b1416a/) - corey321@gmail.com\
 
-- <i class="far fa-exclamation"></i> [Definition of Done](project/curriculum/materials/pages/methodology/definition-of-done.md)
-- <i class="far fa-exclamation"></i> [Product Design](https://www.smashingmagazine.com/2018/01/comprehensive-guide-product-design/)
-- <i class="far fa-exclamation"></i> [Application Design](https://xd.adobe.com/ideas/principles/web-design/web-page-design/)
-- <i class="far fa-exclamation"></i> [Agile Project Management](https://journey.code.cool/v2/project/curriculum/materials/pages/methodology/agile-project-management.md)
-- <i class="far fa-exclamation"></i> [Sales Pitch Examples](https://www.saleshacker.com/sales-pitch-examples/)
+Project Link: [https://github.com/CodecoolGlobal/el-proyecte-grande-design-general-nagmil2077](https://github.com/CodecoolGlobal/el-proyecte-grande-design-general-nagmil2077)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-url]: https://github.com/CodecoolGlobal/el-proyecte-grande-design-general-nagmil2077/graphs/contributors
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/milan-nagy-a76b1416a/
+[product-screenshot]: images/app.png
+
+<!-- STACKS -->
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[MySQL]: https://shields.io/badge/MySQL-lightgrey?logo=mysql&style=plastic&logoColor=white&labelColor=blue
+[MySQL-url]: https://www.mysql.com/
+[PhpStorm]: https://img.shields.io/badge/PhpStorm-000000.svg?style=for-the-badge&logo=phpstorm&logoColor=white
+[PhpStorm-url]: https://www.jetbrains.com/phpstorm/
+[Github]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
+[Github-url]: https://github.com
+[PHP]: https://img.shields.io/badge/PHP-ED8B00?style=for-the-badge&logo=php&logoColor=white
+[Php-url]: https://www.php.net/
+[Laravel]: https://img.shields.io/badge/Laravel-6DB33F?style=for-the-badge&logo=laravel&logoColor=white
+[Laravel-url]: https://laravel.com/
+[Javascript]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[Javascript-url]: https://www.javascript.com
+[CSS]: https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
+[CSS-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
+[HTML5]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
+[HTML5-url]: https://en.wikipedia.org/wiki/HTML5

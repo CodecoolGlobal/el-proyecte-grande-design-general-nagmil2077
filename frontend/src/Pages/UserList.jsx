@@ -47,7 +47,6 @@ const UserList = () => {
                 <UserTable
                     users={users}
                     onDelete={handleDelete}
-                    onCancel={() => navigate(`/profile/${id}`)}
                 />
             }
         </div>
