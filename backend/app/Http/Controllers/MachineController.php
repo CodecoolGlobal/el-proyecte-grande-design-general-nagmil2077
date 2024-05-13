@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 class MachineController extends Controller
 {
-    public function getNames(){
+    public function getNames(): \Illuminate\Http\JsonResponse
+    {
         $machines = Machine::all();
         return response()->json($machines);
     }
