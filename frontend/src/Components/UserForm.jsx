@@ -14,7 +14,6 @@ const UserForm = ({ user, onSave, onCancel }) => {
                 ...user,
                 name,
                 email,
-                password,
             });
         }
 
@@ -26,7 +25,7 @@ const UserForm = ({ user, onSave, onCancel }) => {
     };
 
     return (
-        <div>
+        <div className="container">
             <Box
                 component="form"
                 sx={{
@@ -59,7 +58,8 @@ const UserForm = ({ user, onSave, onCancel }) => {
                     />
                 </div>
                 <div>
-                    <TextField
+                    {!user &&
+                        <TextField
                         label="Password"
                         type="password"
                         name="password"
@@ -67,7 +67,8 @@ const UserForm = ({ user, onSave, onCancel }) => {
                         onChange={(e) => setPassword(e.target.value)}
                         required
                         variant="outlined"
-                    />
+                        />
+                    }
                 </div>
                 <Button type="submit" variant="contained" sx={{mt: 3}}>
                     Submit
