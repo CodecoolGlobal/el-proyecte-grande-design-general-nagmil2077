@@ -24,9 +24,6 @@ const UserForm = ({ user, onSave, onCancel }) => {
 
     return (
         <div>
-            <Typography variant="h4" component="h2" sx={{mt: 3, mb: 2}}>
-                Update Profile
-            </Typography>
             <Box
                 component="form"
                 sx={{

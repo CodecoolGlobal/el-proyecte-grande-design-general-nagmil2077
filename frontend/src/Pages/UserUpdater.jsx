@@ -53,6 +53,9 @@ const UserUpdater = () => {
     return (
         <div className="container">
             <SideBar/>
+            <Typography variant="h4" component="h2" sx={{mt: 3, mb: 2}}>
+                Update Profile
+            </Typography>
             {user &&
                 <UserForm
                     user={user}
