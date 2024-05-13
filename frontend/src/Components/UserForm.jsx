@@ -4,6 +4,7 @@ import {Box, Button, Container, TextField, Typography} from "@mui/material";
 const UserForm = ({ user, onSave, onCancel }) => {
     const [name, setName] = useState(user?.name ?? "");
     const [email, setEmail] = useState(user?.email ?? "");
+    const [password, setPassword] = useState(user?.password ?? "");
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -13,12 +14,14 @@ const UserForm = ({ user, onSave, onCancel }) => {
                 ...user,
                 name,
                 email,
+                password,
             });
         }
 
         return onSave({
             name,
             email,
+            password,
         });
     };
 
@@ -51,6 +54,17 @@ const UserForm = ({ user, onSave, onCancel }) => {
                         name="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        required
+                        variant="outlined"
+                    />
+                </div>
+                <div>
+                    <TextField
+                        label="Password"
+                        type="password"
+                        name="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         required
                         variant="outlined"
                     />
