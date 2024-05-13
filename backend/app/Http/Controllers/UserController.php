@@ -7,20 +7,20 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function getUserById($id)
+    public function getUserById($id): \Illuminate\Http\JsonResponse
     {
         $user = User::with('roles')->findOrFail($id);
 
         return response()->json($user);
     }
 
-    public function getUsers()
+    public function getUsers(): \Illuminate\Http\JsonResponse
     {
         $users = User::query()->orderBy('name')->get();
         return response()->json($users);
     }
 
-    public function updateUser(Request $request, $id)
+    public function updateUser(Request $request, $id): \Illuminate\Http\JsonResponse
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
@@ -29,7 +29,6 @@ class UserController extends Controller
 
         $user = User::findOrFail($id);
 
-        // Update:
         $user->name = $validatedData['name'];
         $user->email = $validatedData['email'];
 
@@ -38,7 +37,7 @@ class UserController extends Controller
         return response()->json(['message' => 'User profile updated successfully']);
     }
 
-    public function deleteUser($id)
+    public function deleteUser($id): \Illuminate\Http\JsonResponse
     {
         $user = User::findOrFail($id);
 
