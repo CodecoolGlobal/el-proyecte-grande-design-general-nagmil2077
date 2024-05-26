@@ -27,4 +27,16 @@ class UserControllerTest extends TestCase
                 "email" => $user->email,
             ]);
     }
+
+    /**
+     * @return void
+     */
+    public function testGetUsers()
+    {
+        User::factory()->count(5)->create();
+
+        $response = $this->getJson("/api/users");
+
+        $response->assertStatus(200)->assertJsonCount(5);
+    }
 }
