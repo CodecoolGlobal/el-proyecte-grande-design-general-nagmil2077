@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Log;
 
 class ScheduleController extends Controller
 {
-    public function availableUsers(Request $request)
+    public function availableUsers(Request $request): \Illuminate\Http\JsonResponse
     {
         $machineId = $request->query('machineId');
         $selectedHour = $request->query('hour');
@@ -27,7 +27,8 @@ class ScheduleController extends Controller
 
         return response()->json($availableUsers);
     }
-    public function assignUser(Request $request)
+
+    public function assignUser(Request $request): \Illuminate\Http\JsonResponse
     {
         $validated = $request->validate([
             'userId' => 'required|string',

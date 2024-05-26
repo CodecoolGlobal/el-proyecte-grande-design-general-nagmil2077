@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Link, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 import SideBar from "../Components";
 import UserForm from "../Components/UserForm"
@@ -53,6 +53,9 @@ const UserUpdater = () => {
     return (
         <div className="container">
             <SideBar/>
+            <Typography variant="h4" component="h2" sx={{mt: 3, mb: 2}}>
+                Update Profile
+            </Typography>
             {user &&
                 <UserForm
                     user={user}

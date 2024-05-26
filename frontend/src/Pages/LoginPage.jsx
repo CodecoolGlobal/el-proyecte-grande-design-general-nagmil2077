@@ -4,8 +4,7 @@ import SideBar from "../Components";
 import {Box, Button, Container, TextField, Typography} from "@mui/material";
 
 const Login = () => {
-
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -81,8 +80,11 @@ const Login = () => {
                             variant="outlined"
                         />
                     </div>
-                    <Button type="submit" variant="contained" sx={{ mt: 3, mb: 2 }}>
+                    <Button type="submit" variant="contained" sx={{mt: 3, mb: 2}}>
                         Sign In
+                    </Button>
+                    <Button type="button" onClick={() => navigate("/")} variant="contained" sx={{mt: 3, mb: 2}}>
+                        Cancel
                     </Button>
                 </Box>
             </Container>
