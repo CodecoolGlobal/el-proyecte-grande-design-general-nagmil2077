@@ -40,6 +40,9 @@ class LoginControllerTest extends TestCase
             ->assertJsonStructure([
                 'token',
                 'id',
+            ])
+            ->assertJson([
+                'id' => $user->id,
             ]);
     }
 
