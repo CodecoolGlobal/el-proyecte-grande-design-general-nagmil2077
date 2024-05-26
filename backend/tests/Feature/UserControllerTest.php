@@ -11,7 +11,10 @@ class UserControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_get_user_by_id()
+    /**
+     * @return void
+     */
+    public function testGetUserById()
     {
         $user = User::factory()->create();
 
