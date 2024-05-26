@@ -39,4 +39,28 @@ class UserControllerTest extends TestCase
 
         $response->assertStatus(200)->assertJsonCount(5);
     }
+
+    /**
+     * @return void
+     */
+    public function testUpdateUser()
+    {
+        $user = User::factory()->create();
+
+        $updateData = [
+            'name' => 'Random Name',
+            'email' => 'random@example.com',
+        ];
+
+        $response = $this->patchJson("/api/users/{$user->id}", $updateData);
+
+        $response->assertStatus(200)
+            ->assertJson(['message' => 'User profile updated successfully']);
+
+        $this->assertDatabaseHas('users', [
+            'id' => $user->id,
+            'name' => 'Random Name',
+            'email' => 'random@example.com',
+        ]);
+    }
 }
