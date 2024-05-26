@@ -42,4 +42,28 @@ class LoginControllerTest extends TestCase
                 'id',
             ]);
     }
+
+    /**
+     * Test login with invalid credentials.
+     *
+     * This test verifies that a login attempt with incorrect credentials
+     * returns an unauthorized error.
+     *
+     * @return void
+     */
+    public function testLoginWithInvalidCredentials()
+    {
+        $user = User::factory()->create([
+            'email' => 'test@example.com',
+            'password' => bcrypt('password'),
+        ]);
+
+        $response = $this->postJson('/api/login', [
+            'email' => 'test@example.com',
+            'password' => 'wrongpassword',
+        ]);
+
+        $response->assertStatus(401)
+            ->assertJson(['error' => 'Unauthorized']);
+    }
 }
