@@ -63,4 +63,19 @@ class UserControllerTest extends TestCase
             'email' => 'random@example.com',
         ]);
     }
+
+    /**
+     * @return void
+     */
+    public function testDeleteUser()
+    {
+        $user = User::factory()->create();
+
+        $response = $this->deleteJson("/api/users/{$user->id}");
+
+        $response->assertStatus(200)
+            ->assertJson(['message' => 'User deleted successfully']);
+
+        $this->assertDatabaseMissing('users', ['id' => $user->id]);
+    }
 }
