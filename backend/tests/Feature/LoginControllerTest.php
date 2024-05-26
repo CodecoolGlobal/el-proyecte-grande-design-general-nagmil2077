@@ -66,4 +66,23 @@ class LoginControllerTest extends TestCase
         $response->assertStatus(401)
             ->assertJson(['error' => 'Unauthorized']);
     }
+
+    /**
+     * Test login with validation errors.
+     *
+     * This test verifies that login attempts with missing or invalid
+     * credentials return appropriate validation errors.
+     *
+     * @return void
+     */
+    public function testLoginWithValidationErrors()
+    {
+        $response = $this->postJson('/api/login', [
+            'email' => 'invalid-email',
+            'password' => '',
+        ]);
+
+        $response->assertStatus(422)
+            ->assertJsonValidationErrors(['email', 'password']);
+    }
 }
