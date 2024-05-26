@@ -7,11 +7,21 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
+/**
+ * Class UserControllerTest
+ *
+ * This class contains feature tests for the UserController.
+ */
 class UserControllerTest extends TestCase
 {
     use RefreshDatabase;
 
     /**
+     * Test the getUserById method.
+     *
+     * This test verifies that the getUserById method returns the expected user
+     * data for a given user ID.
+     *
      * @return void
      */
     public function testGetUserById()
@@ -29,6 +39,10 @@ class UserControllerTest extends TestCase
     }
 
     /**
+     * Test the getUsers method.
+     *
+     * This test verifies that the getUsers method returns a list of users.
+     *
      * @return void
      */
     public function testGetUsers()
@@ -41,6 +55,11 @@ class UserControllerTest extends TestCase
     }
 
     /**
+     * Test the updateUser method.
+     *
+     * This test verifies that the updateUser method correctly updates the user's
+     * profile information and returns a success message.
+     *
      * @return void
      */
     public function testUpdateUser()
@@ -65,6 +84,11 @@ class UserControllerTest extends TestCase
     }
 
     /**
+     * Test the deleteUser method.
+     *
+     * This test verifies that the deleteUser method deletes the user and returns
+     * a success message.
+     *
      * @return void
      */
     public function testDeleteUser()
