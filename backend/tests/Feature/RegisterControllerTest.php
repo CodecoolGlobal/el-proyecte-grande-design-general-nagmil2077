@@ -56,4 +56,30 @@ class RegisterControllerTest extends TestCase
         $user = User::where('email', 'test@example.com')->first();
         $this->assertTrue(Hash::check('password', $user->password));
     }
+
+    /**
+     * Test registration with an existing email.
+     *
+     * This test verifies that a registration attempt with an email that already
+     * exists in the database returns a validation error.
+     *
+     * @return void
+     */
+    public function testRegistrationWithExistingEmail()
+    {
+        $existingUser = User::factory()->create([
+            'email' => 'test@example.com',
+        ]);
+
+        $userData = [
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+            'password' => 'password',
+        ];
+
+        $response = $this->postJson('/api/register', $userData);
+
+        $response->assertStatus(422)
+            ->assertJsonValidationErrors(['email']);
+    }
 }
