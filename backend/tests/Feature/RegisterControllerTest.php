@@ -82,4 +82,26 @@ class RegisterControllerTest extends TestCase
         $response->assertStatus(422)
             ->assertJsonValidationErrors(['email']);
     }
+
+    /**
+     * Test registration with validation errors.
+     *
+     * This test verifies that registration attempts with invalid data return
+     * appropriate validation errors.
+     *
+     * @return void
+     */
+    public function testRegistrationWithValidationErrors()
+    {
+        $userData = [
+            'name' => '',
+            'email' => 'definitely-not-an-email',
+            'password' => '456',
+        ];
+
+        $response = $this->postJson('/api/register', $userData);
+
+        $response->assertStatus(422)
+            ->assertJsonValidationErrors(['name', 'email', 'password']);
+    }
 }
