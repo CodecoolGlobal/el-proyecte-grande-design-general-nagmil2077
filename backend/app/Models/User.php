@@ -16,7 +16,7 @@ class User extends Authenticatable
 
     public function userMachineSkills()
     {
-        return $this->hasMany(UserMachineSkill::class);
+        return $this->hasMany(UserMachineSkill::class, 'user_id');
     }
     public function schedules()
     {

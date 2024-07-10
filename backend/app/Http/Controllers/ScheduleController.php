@@ -42,13 +42,29 @@ class ScheduleController extends Controller
             'user' => $validated['userId'],
             'machine' => $validated['machineId'],
         ]);
-        Log::debug('User ID: ' . $validated['userId']);
-        Log::debug('Machine ID: ' . $validated['machineId']);
-        Log::debug('Hour: ' . $validated['hour']);
-        Log::debug('Date and Hour: ' . $dateAndHour);
-
         return response()->json($schedule, 201);
     }
+    public function resetAssignment(Request $request)
+    {
+        $validated = $request->validate([
+            'machineId' => 'required|integer',
+            'hour' => 'required|string',
+        ]);
+
+        $dateAndHour = Carbon::parse($validated['hour']);
+
+        $assignment = Schedule::where('machine_id', $validated['machineId'])
+            ->where('dateAndHour', $dateAndHour)
+            ->first();
+
+        if ($assignment) {
+            $assignment->delete();
+            return response()->json(['message' => 'Assignment reset successfully'], 200);
+        }
+
+        return response()->json(['message' => 'Assignment not found'], 404);
+    }
+
 
     //TODO: transactions
 }

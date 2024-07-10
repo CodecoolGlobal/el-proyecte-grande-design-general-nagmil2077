@@ -29,8 +29,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/logout', [LogoutController::class, 'logout']);
     Route::get('/available-users', [ScheduleController::class, 'availableUsers']);
     Route::post('/assign-user', [ScheduleController::class, 'assignUser']);
+    Route::post('/reset-assignment', [ScheduleController::class, 'resetAssignment']);
 });
 
 Route::post('/register', [RegisterController::class, 'register']);
-Route::post('/login', [LoginController::class, 'login']);
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/machinenames', [MachineController::class, 'getNames']);
